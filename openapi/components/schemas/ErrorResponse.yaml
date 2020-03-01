@@ -1,0 +1,6 @@
+title: Root Type for Error
+type: object
+properties:
+  error:
+    $ref: ./Error.yaml
+description: Represents the error response object.

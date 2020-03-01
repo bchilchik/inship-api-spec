@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Inship
+  description: |-
+    The following documentation describes the current Inship API (version 1).
+
+    # Authentication
+
+    <!-- ReDoc-Inject: <security-definitions> -->
+  termsOfService: 'https://www.inship.com.au/terms'
+  contact:
+    url: 'https://www.inship.com.au/contact'
+    email: support@inship.com.au
+  version: '1.0'
+servers:
+  - url: 'https://www.inship.io/api/v1'
+    description: Inship API Production
+  - url: 'https://staging.inship.io/api/v1'
+    description: Inship API Staging
+paths:
+  /insurance/quote:
+    $ref: paths/insurance@quote.yaml
+components:
+  securitySchemes:
+    AuthToken:
+      type: apiKey
+      description: >
+        To make requests to the API, an authentication token is required. This
+        can be passed by including the `api_key` HTTTP header on all API
+        requests.
+      name: api_key
+      in: header

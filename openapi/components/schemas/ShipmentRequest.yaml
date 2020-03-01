@@ -1,0 +1,7 @@
+title: Shipment Request
+type: object
+properties:
+  price:
+    type: string
+    description: Quote for the insured value provided.
+description: The insurance quote provided.

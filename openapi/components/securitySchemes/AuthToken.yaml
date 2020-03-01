@@ -1,0 +1,6 @@
+type: apiKey
+description: >
+  To make requests to the API, an authentication token is required. This can be
+  passed by including the `api_key` HTTTP header on all API requests.
+name: api_key
+in: header

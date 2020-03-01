@@ -1,0 +1,53 @@
+get:
+  tags:
+    - Book
+  parameters:
+    - name: value
+      in: query
+      description: The insured value of the shipment including freight
+      required: true
+      style: form
+      explode: true
+      schema:
+        type: number
+        format: float
+  responses:
+    '200':
+      description: Returns an insurance quote for the given insured value
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/QuoteResponse.yaml
+          examples:
+            Example Successful Quote Response:
+              value:
+                insurance_quote:
+                  price: '24.08'
+    '400':
+      description: Required query parameter and value not provided in the correct format.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+          examples:
+            Example Invalid Request Response:
+              value:
+                error:
+                  timestamp: 1582954269777
+                  status: 400
+                  errors:
+                    - Required float parameter 'value' is not present
+    '401':
+      description: Unauthorized request.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+          examples:
+            Example Unauthorised Request Response:
+              value:
+                error:
+                  timestamp: 1582954269777
+                  status: 401
+                  errors:
+                    - You are not authorised to access this resource

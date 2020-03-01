@@ -1,0 +1,6 @@
+title: Root Type for QuoteResponse
+type: object
+properties:
+  insurance_quote:
+    $ref: ./Quote.yaml
+description: Represents the successful quote response.

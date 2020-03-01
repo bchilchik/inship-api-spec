@@ -1,0 +1,14 @@
+title: Error
+properties:
+  timestamp:
+    type: integer
+    description: Timestamp of the error event.
+  status:
+    type: integer
+    description: Error code
+  errors:
+    type: array
+    description: List of error message in human-readable form
+    items:
+      type: string
+description: The error object returned.
